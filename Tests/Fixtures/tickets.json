@@ -1,0 +1,133 @@
+{
+    "events": [
+        {
+            "id": 11435,
+            "name": "Event 1",
+            "tickets": [
+                {
+                    "id": "75632",
+                    "name": "my default price",
+                    "price": 10,
+                    "participants": 110,
+                    "quota": 400,
+                    "start_sale": null,
+                    "end_sale": "2013-01-29T13:00:00+0000"
+                },
+                {
+                    "id": "ABCDE125632",
+                    "name": "Tarif 2",
+                    "price": 12,
+                    "participants": 800,
+                    "quota": 1200,
+                    "start_sale": "2013-01-23T11:00:00+0000",
+                    "end_sale": "2013-01-29T13:00:00+0000"
+                }
+            ],
+            "categories": [
+                {
+                    "id": "11745",
+                    "name": "Categorie 1",
+                    "tickets": [
+                        {
+                            "id": "44272",
+                            "name": "b2",
+                            "price": 9.99,
+                            "participants": 99,
+                            "quota": 0,
+                            "start_sale": "2013-01-23T11:00:00+0000",
+                            "end_sale": "2013-01-29T13:00:00+0000"
+                        }
+                    ],
+                    "categories": [
+                        {
+                            "id": "11746",
+                            "name": "Sous Categorie 1",
+                            "tickets": [
+                                {
+                                    "id": "65632",
+                                    "name": "b3",
+                                    "price": 0,
+                                    "participants": 210,
+                                    "quota": 0,
+                                    "start_sale": "2013-01-23T11:00:00+0000",
+                                    "end_sale": "2013-01-29T13:00:00+0000"
+                                },
+                                {
+                                    "id": "65638",
+                                    "name": "b4",
+                                    "price": 10,
+                                    "participants": 190,
+                                    "quota": 0,
+                                    "start_sale": "2013-01-23T11:00:00+0000",
+                                    "end_sale": "2013-01-29T13:00:00+0000"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 10473,
+            "name": "Event 2",
+            "tickets": [
+                {
+                    "id": "40413",
+                    "name": "Billet 1",
+                    "price": 10,
+                    "participants": 0,
+                    "quota": 100,
+                    "start_sale": "2013-01-23T11:00:00+0000",
+                    "end_sale": "2013-01-29T13:00:00+0000"
+                }
+            ],
+            "categories": [
+                {
+                    "id": 4654,
+                    "name": "Categorie 1",
+                    "tickets": [
+                        {
+                            "id": 42637,
+                            "name": "Billet 2",
+                            "price": 0,
+                            "start_sale": "2013-01-23T11:00:00+0000",
+                            "end_sale": "2013-01-29T13:00:00+0000"
+                        }
+                    ],
+                    "categories": [
+                        {
+                            "id": "4655",
+                            "name": "Sous categorie 1",
+                            "tickets": [
+                                {
+                                    "id": "42638",
+                                    "name": "Billet 3",
+                                    "price": 10,
+                                    "participants": 110,
+                                    "quota": 110,
+                                    "start_sale": "2013-01-23T11:00:00+0000",
+                                    "end_sale": "2013-01-29T13:00:00+0000"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "5998",
+                    "name": "Categorie 2",
+                    "tickets": [
+                        {
+                            "id": "42639",
+                            "name": "Billet 4",
+                            "price": 10,
+                            "participants": 1011,
+                            "quota": 1100,
+                            "start_sale": "2013-01-23T11:00:00+0000",
+                            "end_sale": "2013-01-29T13:00:00+0000"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

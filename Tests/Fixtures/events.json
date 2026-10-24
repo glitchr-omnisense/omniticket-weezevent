@@ -1,0 +1,32 @@
+{
+    "events": [
+        {
+            "id": 13824,
+            "name": "Event 1",
+            "date": {
+                "start": "2011-10-10 00:00:00",
+                "end": ""
+            },
+            "participants": 0,
+            "multiple_dates": 0,
+            "sales_status": {
+                "id_status": 1,
+                "libelle_status": "Vente en cours"
+            }
+        },
+        {
+            "id": 11435,
+            "name": "Event 2",
+            "date": {
+                "start": "2011-11-27 00:00:00",
+                "end": ""
+            },
+            "participants": 24,
+            "multiple_dates": 1,
+            "sales_status": {
+                "id_status": 2,
+                "libelle_status": "Bientôt en vente"
+            }
+        }
+    ]
+}

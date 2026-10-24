@@ -1,0 +1,53 @@
+{
+    "name": "omniticket/weezevent",
+    "type": "library",
+    "description": "Omniticket's Weezevent, under any PHP host: an organizer's events with their rates (categories flattened), sessions and sales period, the participants of an event (incrementally), and a ticket's barcode checked at the door - read only, through Weezevent's API (api.weezevent.com).",
+    "keywords": [
+        "weezevent",
+        "ticketing",
+        "tickets",
+        "events",
+        "attendees",
+        "check-in",
+        "framework-agnostic",
+        "omniticket"
+    ],
+    "homepage": "https://github.com/glitchr-studio/omniticket-weezevent",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marco Meyer",
+            "email": "marco.meyer@glitchr.io"
+        }
+    ],
+    "require": {
+        "php": ">=8.2",
+        "omniscient/omniticket": "^1.0@dev",
+        "symfony/http-client-contracts": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.0",
+        "symfony/http-client": "^6.4|^7.0|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Omniticket\\Weezevent\\": ""
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Omniticket\\Weezevent\\Tests\\": "Tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-1.x": "1.x-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

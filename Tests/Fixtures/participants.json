@@ -1,0 +1,113 @@
+{
+    "participants": [
+        {
+            "id_participant": 7759645,
+            "id_event": 49015,
+            "id_date": 0,
+            "id_ticket": "198251",
+            "barcode": "7448370",
+            "id_weez_ticket": "T6E49015O5822",
+            "deleted": "0",
+            "refund": "",
+            "comment": "",
+            "create_date": "2014-01-23 12:41:55",
+            "origin": "saisir",
+            "id_transaction": 2029446,
+            "paid": true,
+            "code_member": "CODEMEMBER",
+            "transaction_reference": "C15E265226O63029",
+            "control_status": {
+                "status": "0",
+                "scan_date": "0000-00-00 00:00:00",
+                "scan_user": "0",
+                "scan_user_name": ""
+            },
+            "promo_code": "",
+            "owner": {
+                "first_name": "",
+                "last_name": "",
+                "email": "",
+                "comment": "",
+                "custom_field": "",
+                "origin": "saisir"
+            },
+            "upselling": [
+                {
+                    "barcode": "33212392186194",
+                    "category": {
+                        "id": 1,
+                        "name": "CASHLESS"
+                    },
+                    "product": {
+                        "id": 1131,
+                        "name": "Préchargement cashless",
+                        "reference": "PC0001"
+                    },
+                    "sub_product": {
+                        "id": 135131,
+                        "name": "Préchargement de 10.50€",
+                        "reference": "PCP001",
+                        "price": 10.5
+                    },
+                    "quantity": 1,
+                    "paid_price": 10.5,
+                    "deleted": false
+                },
+                {
+                    "barcode": "33212392186195",
+                    "category": {
+                        "id": 1,
+                        "name": "CASHLESS"
+                    },
+                    "product": {
+                        "id": 1131,
+                        "name": "Préchargement cashless",
+                        "reference": "PC0001"
+                    },
+                    "sub_product": {
+                        "id": 135132,
+                        "name": "Préchargement de 15.00€",
+                        "reference": "PCP002",
+                        "price": 15
+                    },
+                    "quantity": 1,
+                    "paid_price": 15,
+                    "deleted": false
+                }
+            ]
+        },
+        {
+            "id_participant": 7759646,
+            "id_event": 49015,
+            "id_date": 0,
+            "id_ticket": "198251",
+            "barcode": "7448371",
+            "id_weez_ticket": "T7E49015O5822",
+            "deleted": "0",
+            "refund": "1",
+            "comment": "",
+            "create_date": "2014-01-23 12:41:55",
+            "origin": "saisir",
+            "id_transaction": 2029446,
+            "paid": true,
+            "code_member": "CODEMEMBER",
+            "transaction_reference": "C4E265226O63029",
+            "control_status": {
+                "status": "0",
+                "scan_date": "0000-00-00 00:00:00",
+                "scan_user": "0",
+                "scan_user_name": ""
+            },
+            "owner": {
+                "first_name": "",
+                "last_name": "",
+                "email": "",
+                "comment": "",
+                "custom_field": "",
+                "origin": "saisir"
+            },
+            "promo_code": "MY-PROMO-CODE-123"
+        }
+    ],
+    "server_time": "2014-01-23 12:52:19"
+}

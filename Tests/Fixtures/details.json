@@ -1,0 +1,75 @@
+{
+    "last_update": "2013-05-27T18:02:16+02:00",
+    "events": {
+        "id": "36799",
+        "title": "API API API",
+        "site_url": "",
+        "description": "",
+        "image": "http://weezevent.dev/uploads/evenement_affiche/affiche_36799.png?1368811166",
+        "category": {
+            "id": "14",
+            "name": "Soir\\u00e9e clubbing"
+        },
+        "period": {
+            "start": "2013-06-27 09:00:00",
+            "end": "2013-06-30 09:00:59"
+        },
+        "price": {
+            "min": "142.00",
+            "max": "142.00"
+        },
+        "venue": {
+            "name": "Bureau",
+            "address": "110 rue des Poissonniers",
+            "zip_code": "75018",
+            "city": "PAris",
+            "state": "",
+            "country": {
+                "code": "FR",
+                "name": "FRANCE"
+            },
+            "coordinates": {
+                "long": "0.0000000",
+                "lat": "0.0000000"
+            }
+        },
+        "extras": {
+            "minisite_url": "http://weezevent.dev/api-api-api"
+        },
+        "sale_period": {
+            "start": "2013-06-27 09:00:00",
+            "end": "2013-06-30 09:00:00"
+        },
+        "dates": [
+            {
+                "start": "2013-06-27 09:00:00",
+                "end": ""
+            },
+            {
+                "start": "2013-06-30 09:00:00",
+                "end": ""
+            }
+        ],
+        "organizer": {
+            "organization_name": "",
+            "first_name": "Savic",
+            "last_name": "Yasmina",
+            "location": {
+                "address": "110 rue des Poissonniers",
+                "zip_code": "H1Y 2G5",
+                "city": "Montr\\u00e9al",
+                "state": "",
+                "country": {
+                    "code": "CA",
+                    "name": "CANADA"
+                }
+            },
+            "phone": "0141414141",
+            "cell_phone": "",
+            "fax": "",
+            "email": "y.savic@weezevent.com",
+            "website": "",
+            "blog": ""
+        }
+    }
+}
