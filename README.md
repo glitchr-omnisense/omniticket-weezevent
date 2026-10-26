@@ -1,6 +1,6 @@
 # omniticket/weezevent
 
-[omniscient/omniticket](https://github.com/glitchr-studio/omniticket)'s Weezevent, under any PHP
+[omnisense/omniticket](https://github.com/glitchr-omnisense/omniticket)'s Weezevent, under any PHP
 host: an organizer's events with their rates (categories flattened), sessions and sales period,
 the participants of an event (incrementally), and a ticket's barcode checked among them. Reading
 only.
