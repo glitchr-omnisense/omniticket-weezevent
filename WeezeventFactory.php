@@ -2,6 +2,7 @@
 
 namespace Omniticket\Weezevent;
 
+use Omnisense\Contracts\Policy\UsagePolicy;
 use Omniticket\Config;
 use Omniticket\Exception\InvalidConfigException;
 use Omniticket\ProviderFactory;
@@ -55,6 +56,8 @@ final class WeezeventFactory extends ProviderFactory
             new \DateTimeZone($c->string('timezone') ?? 'Europe/Paris'),
             $c->string('currency') ?? 'EUR',
             rtrim($c->string('url') ?? 'https://api.weezevent.com', '/'),
+            backoff: $c->backoff(),
+            tokens: $c->guard(UsagePolicy::fromFile(WeezeventProvider::POLICY)),
         );
     }
 }

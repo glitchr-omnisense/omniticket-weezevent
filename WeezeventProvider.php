@@ -2,6 +2,10 @@
 
 namespace Omniticket\Weezevent;
 
+use Omnisense\Contracts\Policy\Backoff;
+use Omnisense\Contracts\Policy\DeclaresUsagePolicyInterface;
+use Omnisense\Contracts\Policy\PolicyGuard;
+use Omnisense\Contracts\Policy\UsagePolicy;
 use Omniticket\AttendeeListInterface;
 use Omniticket\Capabilities;
 use Omniticket\EventCatalogInterface;
@@ -28,8 +32,13 @@ use Symfony\Contracts\HttpClient\HttpClientInterface;
  * with the partner's api_key and the organizer's access_token. Reading
  * only: nothing is written, no ticket marked as scanned.
  */
-final class WeezeventProvider implements EventCatalogInterface, AttendeeListInterface, TicketCheckInterface
+final class WeezeventProvider implements EventCatalogInterface, AttendeeListInterface, TicketCheckInterface, DeclaresUsagePolicyInterface
 {
+    /** Weezevent's usage policy, as its terms read on the day it says (provenance.verifiedAt). */
+    public const POLICY = __DIR__.'/policy.json';
+
+    private static ?UsagePolicy $policy = null;
+
     private readonly JsonApi $api;
 
     /** @var array<string, array<string, string>> ticket names by event */
@@ -44,8 +53,10 @@ final class WeezeventProvider implements EventCatalogInterface, AttendeeListInte
         private readonly \DateTimeZone $timezone = new \DateTimeZone('Europe/Paris'),
         private readonly string $currency = 'EUR',
         private readonly string $url = 'https://api.weezevent.com',
+        ?Backoff $backoff = null,
+        private readonly ?PolicyGuard $tokens = null,
     ) {
-        $this->api = new JsonApi($http, 'Weezevent');
+        $this->api = new JsonApi($http, 'Weezevent', $backoff);
     }
 
     public function getName(): string
@@ -58,6 +69,11 @@ final class WeezeventProvider implements EventCatalogInterface, AttendeeListInte
         return 'Weezevent';
     }
 
+    public function usagePolicy(): UsagePolicy
+    {
+        return self::$policy ??= UsagePolicy::fromFile(self::POLICY);
+    }
+
     public function capabilities(): Capabilities
     {
         return new Capabilities(
@@ -67,6 +83,7 @@ final class WeezeventProvider implements EventCatalogInterface, AttendeeListInte
             incremental: true,
             terms: ['https://api.weezevent.com'],
             limits: ['partners only: the api_key is given to registered Weezevent partners', 'fair use: store what is read locally, filter queries (last_update); an abusive key may be restricted'],
+            policy: $this->usagePolicy(),
         );
     }
 
@@ -205,7 +222,13 @@ final class WeezeventProvider implements EventCatalogInterface, AttendeeListInte
 
     private function token(): string
     {
-        return $this->accessToken ??= (string) ($this->api->request('POST', $this->url.'/auth/access_token', ['body' => ['username' => (string) $this->username, 'password' => (string) $this->password, 'api_key' => $this->apiKey]], 'an access token')->string('accessToken')
+        if (null !== $this->accessToken) {
+            return $this->accessToken;
+        }
+        // The credentials attempts' own limit (policy.json, operation "token"), counted apart from the contract's calls.
+        $request = fn () => $this->api->request('POST', $this->url.'/auth/access_token', ['body' => ['username' => (string) $this->username, 'password' => (string) $this->password, 'api_key' => $this->apiKey]], 'an access token');
+
+        return $this->accessToken = (string) ((null === $this->tokens ? $request() : $this->tokens->call('token', $request))->string('accessToken')
             ?? throw new ProviderException('Weezevent gave no access token.'));
     }
 

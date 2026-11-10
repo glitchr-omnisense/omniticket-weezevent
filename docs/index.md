@@ -118,6 +118,16 @@ provider needs: access_token, or username and password.`
   built.
 - A network failure: `UnreachableException`.
 
+## Usage policy
+
+Declared as data in `policy.json` (omnisense/contracts' schema), read on 2026-11-10 at the [fair
+use](https://docapi.weezevent.com/#/legacy/fair-use) page: 600 requests a minute (per IP), 10
+credentials attempts a minute (the access token asked with a login, the operation `token`); 5
+invalid logins ban for 30 minutes (the notes). Storage allowed (Weezevent asks to store what is
+read and filter by last_update); commercial use, caching, redistribution and attribution unknown.
+Through omniticket's registry every call is checked against it, a 429 and its `Retry-After` hold
+the next calls, and a site may tighten it, never loosen it.
+
 ## Verified, and not
 
 `Tests/WeezeventProviderTest.php`, against the example responses of Weezevent's documentation, as

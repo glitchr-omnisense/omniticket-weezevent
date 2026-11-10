@@ -37,6 +37,16 @@ participant list is cut without paging (`max` and `page` are documented without 
 
 No PHP client of Weezevent's API was found to reuse.
 
+## Usage policy
+
+Declared as data in `policy.json` (omnisense/contracts' schema), read on 2026-11-10 at the [fair
+use](https://docapi.weezevent.com/#/legacy/fair-use) page: 600 requests a minute (per IP), 10
+credentials attempts a minute (the access token asked with a login, the operation `token`); 5
+invalid logins ban for 30 minutes (the notes). Storage allowed (Weezevent asks to store what is
+read and filter by last_update); commercial use, caching, redistribution and attribution unknown.
+Through omniticket's registry every call is checked against it, a 429 and its `Retry-After` hold
+the next calls, and a site may tighten it, never loosen it.
+
 ## Verified, and not
 
 - Verified (the core's harness, PHP 8.4): events and their sales status, one event whole (rates

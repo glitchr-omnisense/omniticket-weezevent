@@ -1,0 +1,54 @@
+{
+    "$schema": "https://github.com/glitchr-omnisense/contracts/blob/1.x/resources/usage-policy.schema.json",
+    "provider": "weezevent",
+    "rateLimits": [
+        {
+            "max": 600,
+            "window": "minute",
+            "scope": "application",
+            "operations": [],
+            "note": "\"more than 600 requests in the same minute will result in a 30 min ban\" (fair use, per IP: the server's)."
+        },
+        {
+            "max": 10,
+            "window": "minute",
+            "scope": "application",
+            "operations": [
+                "token"
+            ],
+            "note": "\"more than 10 credentials attempts in the same minute, either valid or invalid, will result in a 1 min ban\" (POST /auth/access_token)."
+        }
+    ],
+    "rights": {
+        "commercial": "unknown",
+        "openSourceRequired": null,
+        "caching": {
+            "permission": "unknown",
+            "maxTtl": null
+        },
+        "storage": "allowed",
+        "redistribution": "unknown",
+        "attribution": {
+            "required": false,
+            "text": null,
+            "url": null,
+            "where": []
+        },
+        "licence": null
+    },
+    "requirements": {
+        "key": true,
+        "userAgent": {
+            "required": false,
+            "pattern": null
+        }
+    },
+    "provenance": {
+        "terms": "https://docapi.weezevent.com/#/weezevent-legacy/public-old",
+        "policy": "https://docapi.weezevent.com/#/legacy/fair-use",
+        "verifiedAt": "2026-11-10",
+        "declaredBy": "maintainer",
+        "contact": null,
+        "notes": "Legacy API (api.weezevent.com), access limited to registered Weezevent partners. Fair use: store what is read, filter queries (last_update for participants), keep the token on the server; Weezevent monitors calls and may limit or ban a key that does not use the API fairly. The limits are per IP and may change without notice. 5 invalid credentials in a row ban for 30 minutes (429): not a count the schema expresses. \"token\" is the provider's own access token request (username and password), guarded inside its operations (Config::guard()); a site giving access_token makes none. Each call counts one listing, not its pages. Commercial use, caching, redistribution and attribution: not addressed."
+    }
+}
