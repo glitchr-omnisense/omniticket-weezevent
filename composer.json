@@ -22,8 +22,8 @@
     ],
     "require": {
         "php": ">=8.2",
-        "omnisense/contracts": "^1.0@dev",
-        "omnisense/omniticket": "^1.0@dev",
+        "omnisense/contracts": "^1.0",
+        "omnisense/omniticket": "^1.0",
         "symfony/http-client-contracts": "^3.0"
     },
     "require-dev": {

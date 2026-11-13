@@ -5,6 +5,37 @@ host: an organizer's events with their rates (categories flattened), sessions an
 the participants of an event (incrementally), and a ticket's barcode checked among them. Reading
 only.
 
+## Install and a first call
+
+```sh
+composer require omniticket/weezevent
+```
+
+No account for this first call: Weezevent's answer is recorded (`Omniticket\Testing\RecordedHttpClient`
+answers in place of the API), so nothing leaves the process. A real call needs a partner API key
+(Weezevent gives them to registered partners only) and the organizer's token (or login).
+
+```php
+<?php
+
+require __DIR__.'/vendor/autoload.php';
+
+use Omniticket\Testing\RecordedHttpClient;
+use Omniticket\Weezevent\WeezeventFactory;
+
+// Weezevent's answer, recorded: nothing sent. HttpClient::create() (symfony/http-client) for a real call.
+$http = RecordedHttpClient::routes([
+    'GET /events' => '{"events": [{"id": 13824, "name": "Festival d\'été", "date": {"start": "2036-07-10 18:00:00", "end": "2036-07-12 23:00:00"}, "participants": 120, "multiple_dates": 0, "sales_status": {"id_status": 1, "libelle_status": "Vente en cours"}}]}',
+]);
+$weezevent = (new WeezeventFactory($http))->create(['api_key' => 'recorded', 'access_token' => 'recorded']);
+
+foreach ($weezevent->events() as $event) {
+    echo $event->title, ' ', $event->start?->format('d/m/Y H:i'), ' ', $event->availability->sold, " sold\n";   // Festival d'été 10/07/2036 18:00 120 sold
+}
+```
+
+With your key, through the family's registry:
+
 ```php
 use Omniticket\Registry;
 use Omniticket\Weezevent\WeezeventFactory;
