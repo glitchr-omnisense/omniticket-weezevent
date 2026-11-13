@@ -18,7 +18,8 @@ use PHPUnit\Framework\TestCase;
 
 /**
  * Weezevent's answers are the example responses of its documentation
- * (https://api.weezevent.com, read on 2026-10-24), as published. No
+ * (https://api.weezevent.com, read on 2026-10-24), as published but for
+ * the organizer of details.json, given example values. No
  * account was used: Weezevent gives API keys to registered partners.
  */
 final class WeezeventProviderTest extends TestCase

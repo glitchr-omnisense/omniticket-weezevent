@@ -20,7 +20,7 @@
         },
         "venue": {
             "name": "Bureau",
-            "address": "110 rue des Poissonniers",
+            "address": "1 rue de l'Exemple",
             "zip_code": "75018",
             "city": "PAris",
             "state": "",
@@ -52,10 +52,10 @@
         ],
         "organizer": {
             "organization_name": "",
-            "first_name": "Savic",
-            "last_name": "Yasmina",
+            "first_name": "Jeanne",
+            "last_name": "Exemple",
             "location": {
-                "address": "110 rue des Poissonniers",
+                "address": "1 rue de l'Exemple",
                 "zip_code": "H1Y 2G5",
                 "city": "Montr\\u00e9al",
                 "state": "",
@@ -67,7 +67,7 @@
             "phone": "0141414141",
             "cell_phone": "",
             "fax": "",
-            "email": "y.savic@weezevent.com",
+            "email": "organizer@example.org",
             "website": "",
             "blog": ""
         }
